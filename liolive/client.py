@@ -21,7 +21,7 @@ class LioApiError(Exception):
 class LioServerClient:
     """Server-side client. Never use your API secret in client apps."""
 
-    def __init__(self, api_key: str, api_secret: str, base_url: str = "https://api.liolive.com/v1"):
+    def __init__(self, api_key: str, api_secret: str, base_url: str = "https://api.applooma.dev/v1"):
         if not api_key or not api_secret:
             raise ValueError("LioServerClient: api_key and api_secret are required")
         self._api_key = api_key

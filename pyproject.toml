@@ -12,4 +12,4 @@ authors = [{ name = "AppLooma LLC" }]
 keywords = ["lio-live", "webrtc", "video", "voice", "live-streaming"]
 
 [project.urls]
-Documentation = "https://docs.liolive.com"
+Documentation = "https://applooma.dev/dashboard/docs"
