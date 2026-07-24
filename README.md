@@ -1,13 +1,13 @@
-# liolive (Python)
+# applooma (Python)
 
 ```bash
-pip install liolive
+pip install applooma
 ```
 
 ```python
-from liolive import LioServerClient
+from applooma import AppServerClient
 
-lio = LioServerClient(api_key="...", api_secret="...")
+lio = AppServerClient(api_key="...", api_secret="...")
 res = lio.create_token(room_name="room1", identity="user1", role="host")
 # res["token"], res["wsUrl"]
 ```

@@ -1,13 +1,13 @@
 """Lio Live Server SDK for Python — © AppLooma LLC
 
-    from liolive import LioServerClient
+    from applooma import AppServerClient
 
-    lio = LioServerClient(api_key="...", api_secret="...")
+    lio = AppServerClient(api_key="...", api_secret="...")
     res = lio.create_token(room_name="room1", identity="user1", role="host")
     # res["token"], res["wsUrl"]
 """
 
-from .client import LioApiError, LioServerClient
+from .client import AppApiError, AppServerClient
 
-__all__ = ["LioServerClient", "LioApiError"]
+__all__ = ["AppServerClient", "AppApiError"]
 __version__ = "0.1.0"

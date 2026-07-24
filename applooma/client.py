@@ -9,7 +9,7 @@ import urllib.request
 from typing import Any, Optional
 
 
-class LioApiError(Exception):
+class AppApiError(Exception):
     """Raised when the Lio Live API returns an error response."""
 
     def __init__(self, status: int, message: str, code: Optional[str] = None):
@@ -18,12 +18,12 @@ class LioApiError(Exception):
         self.code = code
 
 
-class LioServerClient:
+class AppServerClient:
     """Server-side client. Never use your API secret in client apps."""
 
     def __init__(self, api_key: str, api_secret: str, base_url: str = "https://api.applooma.dev/v1"):
         if not api_key or not api_secret:
-            raise ValueError("LioServerClient: api_key and api_secret are required")
+            raise ValueError("AppServerClient: api_key and api_secret are required")
         self._api_key = api_key
         self._api_secret = api_secret
         self._base_url = base_url.rstrip("/")
@@ -60,8 +60,8 @@ class LioServerClient:
             data=json.dumps(body).encode() if body is not None else None,
             headers={
                 "content-type": "application/json",
-                "x-lio-key": self._api_key,
-                "x-lio-secret": self._api_secret,
+                "x-applooma-key": self._api_key,
+                "x-applooma-secret": self._api_secret,
             },
         )
         try:
@@ -72,4 +72,4 @@ class LioServerClient:
                 data = json.loads(e.read().decode() or "{}")
             except json.JSONDecodeError:
                 data = {}
-            raise LioApiError(e.code, data.get("error", f"Request failed ({e.code})"), data.get("code")) from None
+            raise AppApiError(e.code, data.get("error", f"Request failed ({e.code})"), data.get("code")) from None
