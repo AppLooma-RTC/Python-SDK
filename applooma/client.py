@@ -1,4 +1,4 @@
-"""HTTP client for the Lio Live control-plane API."""
+"""HTTP client for the AppLooma RTC control-plane API."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from typing import Any, Optional
 
 
 class AppApiError(Exception):
-    """Raised when the Lio Live API returns an error response."""
+    """Raised when the AppLooma RTC API returns an error response."""
 
     def __init__(self, status: int, message: str, code: Optional[str] = None):
         super().__init__(message)

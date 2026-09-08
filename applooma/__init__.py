@@ -1,4 +1,4 @@
-"""Lio Live Server SDK for Python — © AppLooma LLC
+"""AppLooma RTC Server SDK for Python — © AppLooma LLC
 
     from applooma import AppServerClient
 
