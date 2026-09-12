@@ -21,5 +21,6 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://applooma.dev"
-Documentation = "https://applooma.dev/dashboard/docs"
-Source = "https://github.com/Codex-For-Jafor/cpas"
+Documentation = "https://docs.applooma.dev/server/python"
+Source = "https://github.com/AppLooma-RTC/Python-SDK"
+Issues = "https://github.com/AppLooma-RTC/Python-SDK/issues"
