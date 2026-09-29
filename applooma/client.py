@@ -60,6 +60,8 @@ class AppServerClient:
             data=json.dumps(body).encode() if body is not None else None,
             headers={
                 "content-type": "application/json",
+                # The API's edge refuses urllib's default "Python-urllib" agent.
+                "user-agent": "applooma-python/0.1.1",
                 "x-applooma-key": self._api_key,
                 "x-applooma-secret": self._api_secret,
             },
